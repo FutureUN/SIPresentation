@@ -12,7 +12,7 @@ Made possible thanks to...
 ## Installation
 
  ```sh
- $ git clone https://github.com/jiapulidoar/FuturePresentation.git 
+ $ git clone https://github.com/FutureUN/FuturePresentation.git 
  $ cd FuturePresentation
  ```
 
