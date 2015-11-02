@@ -1,18 +1,34 @@
 var Leyland = function(p)
 {
     
+  
+
         this.draw = function(n) {
        
         var lay = this.to_array(n);
         var layr = this.to_array(n);
-        console.log(lay);
+        //console.log(lay);
         layr.reverse();
         for(var i=0;i<n;i++)
         {
+            py = p.pmouseY - p.width/2;
+            px = p.pmouseX - p.height/2;
             var a = p.map(layr[i],lay[0],layr[0],lay[0],p.width);
             var b = p.map(lay[i],lay[0],layr[0],0,100);
             p.fill(hue,100,b);
-            p.ellipse(p.width/2,p.height/2,a,a);
+            p.stroke(hue,100,50);
+            var x = p.width/2+px/(a/b);
+            var y = p.height/2+py/(a/b);
+      
+            if(y>p.height)
+                y=p.height;
+            else if(y<0)
+                y=0;
+            if(x>p.width)
+                x=p.width;
+            else if(x<0)
+                x=0;
+            p.ellipse(x,y,a,a);
             
         }
 
@@ -28,7 +44,7 @@ var Leyland = function(p)
                 return n * pow(n,p-1);
         }
         
-        compute = function(n)
+        this.compute = function(n)
         {
             var myset = new Set();
             for(var i=0; i<n;i++)

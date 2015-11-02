@@ -2,7 +2,24 @@ var Abundants = function(p)
 {
 
   
- compute = function (n)
+ this.compute = function (n)
+  {
+     var cont = 0;
+     var number = 0;
+     while (true)
+     {
+       number++;
+       var divisors = sum_of_div(number);
+       if ( divisors > number )
+       {
+            cont ++;
+       }
+       if (cont == n)
+         break;
+     }
+     return number;
+  }
+   compute = function (n)
   {
      var cont = 0;
      var number = 0;
