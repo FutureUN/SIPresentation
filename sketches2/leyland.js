@@ -15,10 +15,10 @@ var Leyland = function(p)
             px = p.pmouseX - p.height/2;
             var a = p.map(layr[i],lay[0],layr[0],lay[0],p.width);
             var b = p.map(lay[i],lay[0],layr[0],0,100);
-            p.fill(hue,100,b);
+            p.fill(hue,100,b*(n));
             p.stroke(hue,100,50);
-            var x = p.width/2+px/(a/b);
-            var y = p.height/2+py/(a/b);
+            var x = p.width/2+px*n/(a/b);
+            var y = p.height/2+py*n/(a/b);
       
             if(y>p.height)
                 y=p.height;

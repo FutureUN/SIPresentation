@@ -12,7 +12,7 @@ var sketch = function( p ) {
     p.draw = function() {
         p.background(0);
         var l = new Leyland(p);
-        l.lineChart(p,n);
+        l.draw(n);
         l.sethue(value);
 
     }; 
