@@ -28,7 +28,7 @@ var Leyland = function(p)
                 return n * pow(n,p-1);
         }
         
-        this.compute = function(n)
+        compute = function(n)
         {
             var myset = new Set();
             for(var i=0; i<n;i++)

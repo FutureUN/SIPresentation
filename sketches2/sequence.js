@@ -5,14 +5,14 @@ var Sequence = function(p)
     
     hue = 180;
     
-    this.compute = function(){};
+    //this.compute = function(){};
     this.draw = function() {};
         
     this.to_array = function(n)
     {   
         var num = []; 
         for (var i=0;i<n;i++)
-            num.push(this.compute(i+1));
+            num.push(compute(i+1));
         return num;
     };
 
@@ -46,8 +46,22 @@ var Sequence = function(p)
          p.ellipse(x,y,6,6);
          
      }
-        
     };
+    
+    this.curveChart = function (p,n){
+     var lay = this.to_array(n);
+     var xy = []; 
+     for (var i =0; i<n;i++)
+     {
+         var x = p.map (i+1, 0,n,0,p.width); 
+         var y = p.map (lay[i], 0,lay[n-1],p.height,0);
+         xy.push(x);
+         xy.push(y);
+     }
+     console.log(xy);
+     p.bezier(xy);
+        
+    }
     
 };
 

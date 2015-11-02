@@ -12,8 +12,7 @@ var sketch = function( p ) {
         var l = new Leyland(p);
   
         l.draw(12);
-        l.barChart(p,20);
-        l.lineChart(p,20);
+        l.curveChart(p,12);
 
     }; 
         
