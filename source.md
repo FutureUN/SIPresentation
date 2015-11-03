@@ -27,9 +27,13 @@ H:
 # Index
 
 <!-- .slide: data-background="#7E2121" --> 
- 1. Abundant Numbers <!-- .element: class="fragment" data-fragment-index="1"-->
- 1. Leyland Numbers <!-- .element: class="fragment" data-fragment-index="2"-->
 
+ 1. Super Class <!-- .element: class="fragment" data-fragment-index="1"-->
+ 1. Abundant Numbers <!-- .element: class="fragment" data-fragment-index="2"-->
+ 1. Leyland Numbers <!-- .element: class="fragment" data-fragment-index="3"-->
+ 1. Composite Numbers <!-- .element: class="fragment" data-fragment-index="4"-->
+ 
+	
 H:
 
 # Abundant Numbers 

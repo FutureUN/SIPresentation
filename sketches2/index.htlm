@@ -11,7 +11,7 @@
     <script src="lib/js/head.min.js"></script>
     <script src="js/reveal.js"></script>
          <script src="sequence.js"></script>
-     <script src="leyland.js"></script>
+     
        <script src="abundants.js"></script>
   <script src="integer_sequence.js"></script>
 
