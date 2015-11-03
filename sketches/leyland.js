@@ -1,29 +1,34 @@
+var Leyland = function(p)
+{
+    
+  
 
-var sketch = function( p ) {
-    var circles= 10; 
-    
-    p.setup = function() {
-        
-        p.createCanvas(400, 400);
-        p.noLoop();       
-    };
-    
-    
-    
-    p.draw = function() {
-        p.background(0);
-        
-        var lay = leyland();
-        var layr = leyland();
+        this.draw = function(n) {
+       
+        var lay = this.to_array(n);
+        var layr = this.to_array(n);
+        //console.log(lay);
         layr.reverse();
-        for(var i=0;i<circles;i++)
+        for(var i=0;i<n;i++)
         {
-            var a = p.map(layr[i],lay[0],layr[0],lay[0],p.width+p.width/4);
-            var b = p.map(lay[i],lay[0],layr[0],0,255);
-            //console.log(lay);
-            p.noStroke();
-            p.fill(b,0,0);
-            p.ellipse(p.width/2,p.height/2,a,a);
+            py = p.mouseY - p.width/2;
+            px = p.mouseX - p.height/2;
+            var a = p.map(layr[i],lay[0],layr[0],lay[0],p.width);
+            var b = p.map(lay[i],lay[0],layr[0],0,100);
+            p.fill(hue,100,b*(n));
+            p.stroke(hue,100,50);
+            var x = p.width/2+px*n/(a/b);
+            var y = p.height/2+py*n/(a/b);
+      
+            if(y>p.height)
+                y=p.height;
+            else if(y<0)
+                y=0;
+            if(x>p.width)
+                x=p.width;
+            else if(x<0)
+                x=0;
+            p.ellipse(x,y,a,a);
             
         }
 
@@ -39,11 +44,11 @@ var sketch = function( p ) {
                 return n * pow(n,p-1);
         }
         
-        function leyland()
+        this.compute = function(n)
         {
             var myset = new Set();
-            for(var i=0; i<circles;i++)
-                for(var j=0;j<circles-i;j++)
+            for(var i=0; i<n;i++)
+                for(var j=0;j<n-i;j++)
                 {
                     var m = (Math.pow(i+2,j+2) + Math.pow(j+2,i+2));
                     myset.add(m);
@@ -52,13 +57,14 @@ var sketch = function( p ) {
             var arr = Array.from(myset);
             arr.sort(CompareNumbers);
             //console.log(arr);
-            return arr.slice(0,circles);
+            return arr[n-1];
         }
         
         function CompareNumbers(a, b){
             return a-b; 
         }
 
+
 };
 
-var myp5 = new p5(sketch, 'leyland_id');
+Leyland.prototype = new Sequence;
