@@ -18,7 +18,7 @@
 
 H:
 
-# Successions 
+# Future Game
 
 by  [Sebastian Chaves](https://github.com/adamantwharf) - [Laura Santos](https://github.com/lsfinite) - [Jimmy Pulido](https://github.com/jiapulidoar)
 
