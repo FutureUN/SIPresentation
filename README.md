@@ -1,4 +1,4 @@
-## Object Oriented Programming Slides --  FuturePresentation
+## Future Game Slides --  FuturePresentation
 
 Part of the *Object Oriented Programming* course given at [National University of Colombia](http://www.disi.unal.edu.co/).
 
@@ -13,8 +13,8 @@ Made possible thanks to...
 ## Installation
 
  ```sh
- $ git clone https://github.com/jiapulidoar/FuturePresentation.git 
- $ cd FuturePresentation
+ $ git clone https://github.com/jiapulidoar/PresentationFutureGame.git 
+ $ cd PresentationFutureGame
  ```
 
 ## Folder Structure
