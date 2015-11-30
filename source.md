@@ -62,7 +62,7 @@ More information on [Wikipedia](https://en.wikipedia.org/wiki/Space_Invaders) <!
 V:
 #### <font color="red">Galaga Running! </font>
 <!-- .slide: data-background="#000000"  -->
-<iframe src="sketches/Galaga.html" width="600" height="600" align="center"> 
+<iframe src="sketches/Galaga.html" width="700" height="700" align="center"> 
 
 
 V: 
@@ -73,7 +73,7 @@ The inspiration for this game was the experience as a gamer. <!-- .element: clas
 
 V:
 #### Transmi-Cloud Running... 
-<iframe src="sketches/Clouds.html" width="600" height="600" align="center"> 
+<iframe src="sketches/Clouds.html" width="700" height="700" align="center"> 
 
 V:
 ## Sticks 
@@ -86,7 +86,7 @@ For more information, on [Wikipedia]( https://es.wikipedia.org/wiki/Torres_de_Ha
 
 V:
 #### Sticks Running... 
-<iframe src="sketches/Stick.html" width="600" height="600" align="center"> 
+<iframe src="sketches/Stick.html" width="700" height="700" align="center"> 
 
 V:
 ## Colors
@@ -94,7 +94,7 @@ V:
 > This game consist of let the drop fall in the correct color cube. The drop will follow the mouse position.If you lose, just ckick any part of the canvas, a the game will start again.  
 V:
 #### Colors Running... 
-<iframe src="sketches/Colors.html" width="600" height="600" align="center"> 
+<iframe src="sketches/Colors.html" width="700" height="700" align="center"> 
 
 V:
 
@@ -103,7 +103,7 @@ V:
 
 V:
 #### Bounce Running... 
-<iframe src="sketches/Bounce.html" width="600" height="600" align="center"> 
+<iframe src="sketches/Bounce.html" width="700" height="700" align="center"> 
 
 V:
 ## Resume 
