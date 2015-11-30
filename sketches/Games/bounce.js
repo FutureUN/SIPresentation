@@ -1,3 +1,7 @@
+//  ¡¡ Experimental  Game !! 
+//  ¡¡  Not finished!! 
+// Instructions :  move the balloon with Arrow Keys 'UP, LEFT, RIGHT'  
+
 var Bounce = function ()
 {
 	var GRAVITY = .2; 

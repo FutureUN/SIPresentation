@@ -94,25 +94,28 @@ var Cloud = function ()
 		panfu.position.y=height/2;
 		GameOver = false;
 		v= height/2;
-
 		updateSprites(true);
 		panfu.velocity.y = 0;
+		//Creates a group of 3-4 cloud for the game 
 		for(var i =0 ; i<random(3,4) ; i ++){
 		cloud = createSprite(random(0,width),random(0,height-30), 70,30)
 		cloud.addImage(cloimg);
 		clouds.add(cloud);
-		cloud.immovable = true;
+		cloud.immovable = true; 
 		}
 
 	}
 	removecloud = function(pan,cloud)
 	{
 		cloud.remove();
+		// this give the panfu a special velocity for the jump after the collision 
 		panfu.velocity.y= -8;
+		// and create a new one after removing the one of the collition
 		cloud = createSprite( random (0,width),panfu.position.y -height,70,30)
 			cloud.addImage(cloimg);
 			clouds.add(cloud);
 			cloud.immovable = true;
+		//this is used for counting the score	
 		Count++;
 
 	}
