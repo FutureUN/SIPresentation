@@ -48,9 +48,25 @@ Yeap, we have made five of them, so you can play the one you consider more inter
 Just see the squares...  <!-- .element: class="fragment" data-fragment-index="2"-->
 
 **And make your choice!!!** <!-- .element: class="fragment" data-fragment-index="3"-->
+V:
+## Objectives
+* Short Term = Have a lot of video games. And try to join them as one big game that is design for include the mini games.
 
+
+
+* Long Term = Make a complete game plataform. For pc ( windows, mac, linux ), movile devices ( android ). 
 H:
 # *The Games*
+
+* Galaga
+
+* Clouds
+
+* Sticks
+
+* Colors
+
+* Bounce
 
 V:
 ### Galaga 
@@ -94,7 +110,7 @@ V:
 |Bounce       | Use your keyboard arrows to play |
 
 V:
-
 # *The way we did it *:
 Each one of the games is a class, and Games, is the super class.  
+<img src="UML.png"> </img>
 
