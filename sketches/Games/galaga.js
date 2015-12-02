@@ -31,7 +31,7 @@ var Galaga = function ()
 		laser.setVolume(0.2);
 		destroyed.setVolume(0.4);
 		destroyed2.setVolume(0.5);
-		start = loadSound('Sounds/all.mp3');
+		start = loadSound('Sounds/Galaga/start.mp3');
 		explosion = loadSound('Sounds/Galaga/explosion.wav');
 		wins = loadSound('Sounds/Galaga/coin_credit.wav');
 
@@ -121,8 +121,8 @@ var Galaga = function ()
 		lifes = 3;
 		GameOver = false;
 		levels(level);
-		start.play();
 		moved = true;
+		start.play();
 	}
 
 	die = function()
