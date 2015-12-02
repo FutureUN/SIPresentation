@@ -75,7 +75,7 @@ var Galaga = function ()
 					die();
 				}
 
-			if(Count >= total){
+			if(asteroids.length <= 0){
 				win();
 				text("WIN!!!, Click Next Level",width/2,height/2);
 			}

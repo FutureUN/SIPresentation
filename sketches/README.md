@@ -10,6 +10,11 @@ Or proyect consisted of a series of minigames. The player select wich one of the
 They are easy to play ( and lose ) for more entertaiment. 
 The games _DOESN'T_ run correctly on  GOOGLE CHROME, so we define the prefered browsers as: Only Mozilla Firefox .
 
+Presentation Available: [Here](http://futureun.github.io/PresentationFutureGame/)
+
+Now Avalaible for Web: [Here](http://futureun.github.io/FutureGame/) :)
+
+
 ## Instalation 
 
     
@@ -36,13 +41,14 @@ The mini games are:
 - Sticks
 
  <img src="Img/stick.png" alt="Sticks" with="250" height="250"></img>
- 
-!! Note: Color drop and Bounce are under development !!
 
 - Color drop
+
+<img src="Img/colors.png" alt="Colors" with="250" height="250"></img>
  
 - Bounce 
 
+<img src="Img/bounce.png" alt="Bounce" with="250" height="250"></img>
 
 Enjoy playing. 
 
