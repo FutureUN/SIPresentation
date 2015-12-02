@@ -8,15 +8,23 @@ var Stick = function ()
 	var selected = -1;
 	var sizeSelected = 0;
 	var comesFrom = -1;
-	var GameOver = false;
+	var GameOver = true;
 	var colp = loadImage("images/win.png");
-	var NUMBER_OF_DONUTS = 1;	
-	
+	var imClick = loadImage("images/click.png");
+	var NUMBER_OF_DONUTS = 0;	
+	var song, sWin, sTake;
 	this.setup= function ()
 	{	
 		//console.log (INF);
+		
 		background(200,50,100);
-		initGame(NUMBER_OF_DONUTS);
+		song = loadSound('Sounds/Stick/theme.mp3');
+		song.setVolume(0.2);
+		sWin = loadSound('Sounds/Stick/win.wav');
+		sTake = loadSound('Sounds/Stick/take.wav');
+		win = createSprite ( width/2,height/2,10,10);
+		win.addImage(imClick);
+		drawSprite(win);
 
 	};
 	finish = function()
@@ -34,12 +42,13 @@ var Stick = function ()
 		console.log("click");
 		if(GameOver)
 		{
-
-			win.remove();
+			GameOver = false;
+				win.remove();		
 			if(NUMBER_OF_DONUTS < 6)
 				NUMBER_OF_DONUTS ++;
 			initGame(NUMBER_OF_DONUTS);
 		}
+
   		
 	}
 
@@ -47,12 +56,17 @@ var win ;
 	draw = function ()
 	{
 		background(200,50,100);
-		if(donuts[2].length == NUMBER_OF_DONUTS )
+		if (!song.isPlaying() && !GameOver )
+			song.play();
+		if(donuts[2].length == NUMBER_OF_DONUTS  && NUMBER_OF_DONUTS > 0)
        	{
        		
        		if ( GameOver == false)
        			finish();
        		GameOver = true;
+       		if (song.isPlaying())
+       			song.stop()
+       		sWin.play();
        		win = createSprite ( width/2,height/2,10,10);
 			win.addImage(colp);
 			drawSprite(win);
@@ -74,7 +88,12 @@ var win ;
 
 	initGame = function (n)
 	{
+		
+
 		updateSprites(true);
+		if (song.isPlaying())
+			song.stop();
+		song.play();
 		selected = -1;
 		sizeSelected = 0;
 	 	comesFrom = -1;
@@ -97,12 +116,15 @@ var win ;
 			donuts[0].add(donut);
 			donuts[0][i].mouseActive= true;
 		}
+
 		drawSprites();
+
 	};
 	grabOne = function (n)
 	{
 		if (top[n].mouseIsPressed)
 			{
+
 		//		console.log("yeah" + donuts1[donuts1.length-1].width ) ;
 				if (donuts[n].length == 0 || donuts[n][donuts[n].length-1].width > sizeSelected )
 				{
@@ -117,17 +139,20 @@ var win ;
 					donuts[n][donuts[n].length-1].position.y =600-((donuts[n].length-1)*40+20)
 					selected = -1;
 				}
+				sTake.play();
 			}
 	}
 
 
 	takeOne = function(n)
 	{
+
 		if ( donuts[n].length > 0)
 		{
 			console.log(selected);
 			if ( donuts[n][donuts[n].length-1].mouseIsPressed && selected == -1) 
 			{	
+				sTake.play();
 				selected = donuts[n].length-1;
 				sizeSelected = donuts[n][selected].width;
 			//donuts1[donuts1.length-1].remove();

@@ -3,6 +3,7 @@ var Colors = function ()
 	var fst_cube , color_Cube,n, cubes, drop;
 	var count =0;
 	var GameOver = true;
+	var song = loadSound('Sounds/all.mp3');
 	this.setup = function()
 	{
 		//createCanvas(600,600);
@@ -129,6 +130,9 @@ var sprScore ;
    {
   		if(GameOver)
   		{
+  			if ( song.isPlaying())
+  				song.stop();
+  			song.play();
     		GameOver= false;
     	    NewGame();
     	}    
