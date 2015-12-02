@@ -70,17 +70,27 @@ H:
 
 V:
 ### Galaga 
+<!-- .slide: data-background="#7E2121"  -->
   >A version of the clasic game. Is an arcade video game developed by Tomohiro Nishikado and released in 1978 <!-- .element: class="fragment" data-fragment-index="1"-->
-
   
 More information on [Wikipedia](https://en.wikipedia.org/wiki/Space_Invaders) <!-- .element: class="fragment" data-fragment-index="1"-->
+
+V:
+#### <font color="red">Galaga Running! </font>
+<!-- .slide: data-background="#000000"  -->
+<iframe src="sketches/Galaga.html" width="700" height="700" align="center"> 
+
 
 V: 
 ### Clouds
   > How far can you go?? The sky is the limit. With this game you will jump the higher you can. Just move te bus with the mouse to go up.
 
-
 The inspiration for this game was the experience as a gamer. <!-- .element: class="fragment" data-fragment-index="1"-->
+
+V:
+#### Transmi-Cloud Running... 
+<iframe src="sketches/Clouds.html" width="700" height="700" align="center"> 
+
 V:
 ## Sticks 
 > This game was based on the Towers of Hanoi. This Puzzle is a mathematical game invented in 1883 by the French mathematician Edouard Lucas.
@@ -91,13 +101,25 @@ The more you play, the more difficult it will become.
 For more information, on [Wikipedia]( https://es.wikipedia.org/wiki/Torres_de_Hanói)
 
 V:
+#### Sticks Running... 
+<iframe src="sketches/Stick.html" width="700" height="700" align="center"> 
+
+V:
 ## Colors
 <!-- .slide: data-background="#7E2121"  -->
 > This game consist of let the drop fall in the correct color cube. The drop will follow the mouse position.If you lose, just ckick any part of the canvas, a the game will start again.  
 V:
+#### Colors Running... 
+<iframe src="sketches/Colors.html" width="700" height="700" align="center"> 
+
+V:
 
 ## Bounce
  >Version of the classic game of the red ball that have to pass thought different mazes to achive their goal. The ball obeys the up/down, right/left arrows of the keyboard. 
+
+V:
+#### Bounce Running... 
+<iframe src="sketches/Bounce.html" width="700" height="700" align="center"> 
 
 V:
 ## Resume 

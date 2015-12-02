@@ -4,12 +4,13 @@ var Stick = function ()
 	var top = [];  
 	var donut;
 	var donuts =  [new Group(), new Group(), new Group()];
-	
+	var colors = ["YELLOW","ORANGE","RED","PINK","PURPLE","BLUE"]
 	var selected = -1;
 	var sizeSelected = 0;
 	var comesFrom = -1;
-
-	var NUMBER_OF_DONUTS = 6;	
+	var GameOver = false;
+	var colp = loadImage("images/win.png");
+	var NUMBER_OF_DONUTS = 1;	
 	
 	this.setup= function ()
 	{	
@@ -18,16 +19,45 @@ var Stick = function ()
 		initGame(NUMBER_OF_DONUTS);
 
 	};
+	finish = function()
+	{
+		updateSprites(false);
+		for ( var i = 0 ; i < 3 ; i ++  )
+		{
+			donuts[i].removeSprites();
+		}
+  		//Count=0;
+  		
+	}
 
+	mousePressed = function() {
+		console.log("click");
+		if(GameOver)
+		{
 
+			win.remove();
+			if(NUMBER_OF_DONUTS < 6)
+				NUMBER_OF_DONUTS ++;
+			initGame(NUMBER_OF_DONUTS);
+		}
+  		
+	}
+
+var win ;
 	draw = function ()
 	{
 		background(200,50,100);
 		if(donuts[2].length == NUMBER_OF_DONUTS )
        	{
-       		//updateSprites(false);   		
-           	text("GANOOOOOOOOOOOOOOOOOOOO!!!!!11",width/2,height/2);
-           	console.log("GANOOOOOOOOOOOOOOOOOOOO");
+       		
+       		if ( GameOver == false)
+       			finish();
+       		GameOver = true;
+       		win = createSprite ( width/2,height/2,10,10);
+			win.addImage(colp);
+			drawSprite(win);
+			
+       		
 		}
 		//console.log(selected);
 		for ( var i = 0 ; i < 3 ; i ++ )
@@ -44,10 +74,18 @@ var Stick = function ()
 
 	initGame = function (n)
 	{
-		for ( var i = 0 ; i < 3 ; i ++  )
+		updateSprites(true);
+		selected = -1;
+		sizeSelected = 0;
+	 	comesFrom = -1;
+		GameOver= false;
+		donuts =  [new Group(), new Group(), new Group()];
+		for ( var i = top.length ; i < 3 ; i ++  )
 		{
 			stick.push( createSprite(width*(i+1)/4, 500 , 20, 300));
 			top.push(createSprite(width*(i+1)/4, 340 , 20, 20));
+			top[i].shapeColor = "BLACK";
+			stick[i].shapeColor = "WHITE";
 			stick[i].mouseActive = true;
 			top[i].mouseActive = true;
 		}
@@ -55,6 +93,7 @@ var Stick = function ()
 		{
 
 			donut = createSprite(width /4 ,600-(i*40+20), 150 - ( i * 20 ),40);
+			donut.shapeColor = colors[i];
 			donuts[0].add(donut);
 			donuts[0][i].mouseActive= true;
 		}
@@ -86,6 +125,7 @@ var Stick = function ()
 	{
 		if ( donuts[n].length > 0)
 		{
+			console.log(selected);
 			if ( donuts[n][donuts[n].length-1].mouseIsPressed && selected == -1) 
 			{	
 				selected = donuts[n].length-1;
