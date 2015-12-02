@@ -28,8 +28,9 @@ H:
 
 <!-- .slide: data-background="#7E2121" --> 
  1. The main idea  <!-- .element: class="fragment" data-fragment-index="1"-->
- 1. The Games <!-- .element: class="fragment" data-fragment-index="2"-->
- 1. The way we did it <!-- .element: class="fragment" data-fragment-index="3"-->
+ 1. The way we did it <!-- .element: class="fragment" data-fragment-index="2"-->
+ 1. The Games <!-- .element: class="fragment" data-fragment-index="3"-->
+ 1. References <!-- .element: class="fragment" data-fragment-index="4"-->
 H:
 
 # *The main idea*
@@ -51,10 +52,15 @@ Just see the squares...  <!-- .element: class="fragment" data-fragment-index="2"
 V:
 ## Objectives
 * Short Term = Have a lot of video games. And try to join them as one big game that is design for include the mini games.
+* Long Term = Make a complete game plataform. For pc ( Windows, Unix systems, GNU ), mobile devices ( android ) and of course the Web. 
+
+H:
+# *The way we did it *:
+Each one of the games is a class, and Games, is the super class.  
+<img src="UML.png"> </img>
 
 
 
-* Long Term = Make a complete game plataform. For pc ( windows, mac, linux ), movile devices ( android ). 
 H:
 # *The Games*
 
@@ -131,8 +137,18 @@ V:
 | Colors      | Follow the mouse position        |
 |Bounce       | Use your keyboard arrows to play |
 
-V:
-# *The way we did it *:
-Each one of the games is a class, and Games, is the super class.  
-<img src="UML.png"> </img>
+H:
 
+## Now Available for web:  
+
+<font color="black"> http:// futureun.github.io/FutureGame </font>
+<!-- .slide: data-background="#2E9AFE"  -->
+
+
+
+V:
+## References
+
+* [P5*JS](http://p5js.org/)
+* [P5.PLay](http://p5play.molleindustria.org/)
+* [Sounds Resources](http://www.sounds-resource.com/)
