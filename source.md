@@ -158,7 +158,7 @@ H:
 
 ## El 15 Puzzle
 
-* Objetivo: Ordenar el tablero.
+* Objetivo: Ordenar un tablero.
 
 <img src="15.png" width="250" height="250"> </img>
 
@@ -166,6 +166,11 @@ Máscara de bits
 
 > 1111 1110 1101 1100 1011 1010 1001 1000 0111 0110 0101 0100 0011 0010 0001 0000
 Décimal: 114779749030816545
+
+v:
+## El 15 Puzzel  
+
+* Se desordenó el tablero con 15 movimientos aleatorios de la casilla vacía, a partir del tablero objetivo.
 
 V:
 ## Ejemplo
@@ -193,5 +198,20 @@ Para una posición [ x , y ] en el tablero las posibles acciones son:
 
 > x + dx[i] ,  y + dy[i]   para   0 <= i <= 3
 
+V:
+## Expansión del Árbol de búsqueda
 
-H: Resultados:
+Factor de ramificación es 4.
+
+<img src="arboldia.png"> </img>
+
+
+H:
+## Resultados
+
+<!-- .slide: data-background="#005050" -->
+
+|  | BFS | DFS | IDF | A* Manhattan | Chino Rabón |
+|--|-----|-----|-----|----|
+|Promedio| 159963 | 2.7156e+06 | 311536 | 99 | 359  |
+| Desviación | 96696 | 3.11804e+06 | 142197 | 77 | 275 |  
