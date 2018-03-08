@@ -32,7 +32,6 @@ H:
 	* Breadth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Uniform-cost Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Depth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
-	* Iterative Deepening Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* A* Search <!-- .element: class="fragment" data-fragment-index="3"-->
  1. El 15-Puzzle  <!-- .element: class="fragment" data-fragment-index="2"-->
 
