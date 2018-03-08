@@ -27,17 +27,21 @@ H:
 # Index
 
 <!-- .slide: data-background="#7E2121" -->
- 1.  <!-- .element: class="fragment" data-fragment-index="1"-->
- 1. El 16-Puzzle  <!-- .element: class="fragment" data-fragment-index="2"-->
+ 1. Agentes  <!-- .element: class="fragment" data-fragment-index="1"-->
  1. Estrategias de Búsqueda <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Breadth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Uniform-cost Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Depth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* Iterative Deepening Search <!-- .element: class="fragment" data-fragment-index="3"-->
 	* A* Search <!-- .element: class="fragment" data-fragment-index="3"-->
- 1. Our implementation <!-- .element: class="fragment" data-fragment-index="4"-->
+ 1. El 15-Puzzle  <!-- .element: class="fragment" data-fragment-index="2"-->
 
-H:
+
+H: ## Agentes
+> Cualquier cosa que puede percibir su entorno a través de sensores (percepciones) y actuar sobre él mediante actuadores (Acciones).
+
+
+V:
 
 ## Agentes Solucionadores de Problemas
 <!-- .slide: data-background="#005050" -->
@@ -46,7 +50,7 @@ H:
 
 V:
 ### Formulación de objetivo:
-Agente se le atribuye un **objetivo** (conjunto de estados del mundo) 하는 목적  y trata de satisfacerlo.
+Agente se le atribuye un **objetivo** (conjunto de estados del mundo)  y trata de satisfacerlo.
 
 *Situación actual y Medida de Rendimieto*
 >Medida de rendimiento: Criterio de la conducta del agente para lograr éxito.
@@ -64,19 +68,19 @@ H:
 ### Ejemplo: Viaje en transmilenio:
 
 <!-- .slide: data-background="#FFFFFF" -->
-* En hora pico; actualmente en el Portal Sur. Clase de 7.
+* En hora pico; actualmente en el Portal Usme. Clase de 7.
 * Objetivo: Llegar al campus de la UN a tiempo.
 
 <img src="map.jpg"> </img>
 
 V:
 ##### Ejemplo: Viaje en transmilenio:
-* **Medida de rendimiento:** Menor cantidad de transbordos, llegar en el menor tiempo posible, ruta más vacia, etc.
+* **Medida de rendimiento**
+
 * Formulación de problema:
 	* Estados: Estaciones.
 	* Acciones: Tomar un bus de una estación a otra.
 
-> Suponer que el agente tiene un mapa de transmilenio y no existe una ruta directa. Ambiente es observable, discreto (finitas opciones), y determinístico (1 acción, 1 salida).
 
 V:
 ### Un problema tiene:
@@ -94,10 +98,10 @@ V:
 
 ### Busquedas de Soluciones:
 
-<!-- .slide: data-background="#7E2121" -->
+<!-- .slide: data-background="#FFFFFF" -->
 
-* Resolución de problemas se hace mediante búsqueda a través del espacio de estados.
-* Técnica básica: Árbol de búsqueda.  generado a partir del estado inicial y la función de transición. Nuevos Nodos.
+* Búsqueda a través del espacio de estados.
+* **Árbol de búsqueda.**  generado a partir del estado inicial y la función de transición. Nuevos Nodos.
 
 
 *Nodo:* Estado, Nodo Padre, Acción, Costo, Profundidad.
@@ -105,87 +109,89 @@ V:
 
 <img src="tree.png"> </img>
 
+v:
 
-H:
 <!-- .slide: data-background="#FFFFFF" -->
 
 <img src="expa.png"> </img>
 
-V:
-### Galaga
-<!-- .slide: data-background="#7E2121"  -->
-  >A version of the clasic game. Is an arcade video game developed by Tomohiro Nishikado and released in 1978 <!-- .element: class="fragment" data-fragment-index="1"-->
+H:
 
-More information on [Wikipedia](https://en.wikipedia.org/wiki/Space_Invaders) <!-- .element: class="fragment" data-fragment-index="1"-->
+## Estrategias de Búsqueda
 
-V:
-#### <font color="red">Galaga Running! </font>
-<!-- .slide: data-background="#000000"  -->
-<iframe src="sketches/Galaga.html" width="700" height="700" align="center">
+* Elegir el orden de expansión de los nodos.
 
+* Evaluación de las estrategias:
+ * Completitud ¿Encuentra la Solución?
+ * Complejidad Temporal: # Nodos generados/expandidos
+ * Complejidad Espacial: Máx nodos en memoria
+ * Optimalidad: Siempre solución bajo costo.
 
-V:
-### Clouds
-  > How far can you go?? The sky is the limit. With this game you will jump the higher you can. Just move te bus with the mouse to go up.
-
-The inspiration for this game was the experience as a gamer. <!-- .element: class="fragment" data-fragment-index="1"-->
 
 V:
-#### Transmi-Cloud Running...
-<iframe src="sketches/Clouds.html" width="700" height="700" align="center">
+#### Tipos de Estrategias de búsqueda
+* No informadas:
+	* BFS
+	* DFS
 
-V:
-## Sticks
-> This game was based on the Towers of Hanoi. This Puzzle is a mathematical game invented in 1883 by the French mathematician Edouard Lucas.
-
-
-The more you play, the more difficult it will become.
-
-For more information, on [Wikipedia]( https://es.wikipedia.org/wiki/Torres_de_Hanói)
-
-V:
-#### Sticks Running...
-<iframe src="sketches/Stick.html" width="700" height="700" align="center">
-
-V:
-## Colors
-<!-- .slide: data-background="#7E2121"  -->
-> This game consist of let the drop fall in the correct color cube. The drop will follow the mouse position.If you lose, just ckick any part of the canvas, a the game will start again.  
-V:
-#### Colors Running...
-<iframe src="sketches/Colors.html" width="700" height="700" align="center">
+* Informadas:
+	* A*
 
 V:
 
-## Bounce
- >Version of the classic game of the red ball that have to pass thought different mazes to achive their goal. The ball obeys the up/down, right/left arrows of the keyboard.
+## BFS
+
+<img src="BFS.gif" width="1000" height="500"> </img>
 
 V:
-#### Bounce Running...
-<iframe src="sketches/Bounce.html" width="700" height="700" align="center">
+
+## DFS
+
+<img src="DFS.gif" width="1000" height="500" > </img>
 
 V:
-## Resume
-| The games   | How to play them                 |
-| ------------|:--------------------------------:|
-| Galaga      | Up/down arrows and mouse press   |
-| Clouds      | With the position of the mouse   |  
-| Sticks      | Ckick the towers with the mouse  |
-| Colors      | Follow the mouse position        |
-|Bounce       | Use your keyboard arrows to play |
+## A*
+
+<img src="a.png"> </img>
 
 H:
 
-## Now Available for web:  
+## El 15 Puzzle
 
-<font color="black"> http:// futureun.github.io/FutureGame </font>
-<!-- .slide: data-background="#2E9AFE"  -->
+* Objetivo: Ordenar el tablero.
 
+<img src="15.png" width="250" height="250"> </img>
 
+Máscara de bits
+
+> 1111 1110 1101 1100 1011 1010 1001 1000 0111 0110 0101 0100 0011 0010 0001 0000
+Décimal: 114779749030816545
 
 V:
-## References
+## Ejemplo
 
-* [P5*JS](http://p5js.org/)
-* [P5.PLay](http://p5play.molleindustria.org/)
-* [Sounds Resources](http://www.sounds-resource.com/)
+|  |  |
+|--|--|
+| 2| 3|
+| 1| 0|
+
+* **mask = 00 00 00 00**   
+* mask = mask |  2 << 0 = 00 00 00 10  
+* mask = mask |  3 << 2 = 00 00 11 10
+* mask = mask |  1 << 4 = 00 01 11 10
+* mask = mask |  0 << 6 = 00 01 11 10   
+> mask = 30  
+
+V:
+##  Reprecentación de Acciones:
+
+dx = { 0 , 1 , 0 , -1 }
+
+dy = { 1 , 0 ,-1,  0  }
+
+Para una posición [ x , y ] en el tablero las posibles acciones son:
+
+> x + dx[i] ,  y + dy[i]   para   0 <= i <= 3
+
+
+H: Resultados:
