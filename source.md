@@ -206,7 +206,7 @@ Factor de ramificación es 4.
 
 
 H:
-## Resultados
+## Resultados , Numero Inserciones 
 
 <!-- .slide: data-background="#005050" -->
 
@@ -214,3 +214,12 @@ H:
 |--|-----|-----|-----|----|
 |Promedio| 159963 | 2.7156e+06 | 311536 | 99 | 359  |
 | Desviación | 96696 | 3.11804e+06 | 142197 | 77 | 275 |  
+V: 
+
+
+|  | BFS | DFS | IDF | A* Manhattan | Chino Rabón |
+|--|-----|-----|-----|----|
+|Promedio| 2561 | 580322 | 2272.53 | 23 | 29  |
+| Desviación | 5130 | 767133 | 5234 | 18 | 31 | 
+
+
