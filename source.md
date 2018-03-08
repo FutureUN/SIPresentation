@@ -18,122 +18,159 @@
 
 H:
 
-# ** FUTURE GAMES ** 
-
+# ** Problem Solving by Searching **
+### FutureUN - Sistemas Inteligentes 2018 - 1
 by  [Sebastian Chaves](https://github.com/adamantwharf) - [Laura Santos](https://github.com/lsfinite) - [Jimmy Pulido](https://github.com/jiapulidoar)
-I
+
 H:
 
 # Index
 
-<!-- .slide: data-background="#7E2121" --> 
- 1. The main idea  <!-- .element: class="fragment" data-fragment-index="1"-->
- 1. The way we did it <!-- .element: class="fragment" data-fragment-index="2"-->
- 1. The Games <!-- .element: class="fragment" data-fragment-index="3"-->
- 1. References <!-- .element: class="fragment" data-fragment-index="4"-->
+<!-- .slide: data-background="#7E2121" -->
+ 1.  <!-- .element: class="fragment" data-fragment-index="1"-->
+ 1. El 16-Puzzle  <!-- .element: class="fragment" data-fragment-index="2"-->
+ 1. Estrategias de Búsqueda <!-- .element: class="fragment" data-fragment-index="3"-->
+	* Breadth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
+	* Uniform-cost Search <!-- .element: class="fragment" data-fragment-index="3"-->
+	* Depth-first Search <!-- .element: class="fragment" data-fragment-index="3"-->
+	* Iterative Deepening Search <!-- .element: class="fragment" data-fragment-index="3"-->
+	* A* Search <!-- .element: class="fragment" data-fragment-index="3"-->
+ 1. Our implementation <!-- .element: class="fragment" data-fragment-index="4"-->
+
 H:
 
-# *The main idea*
+## Agentes Solucionadores de Problemas
 <!-- .slide: data-background="#005050" -->
-V:
- 
- ## What is it about?
-  
-  >The idea of the game was creat a serie of mini games. Easy to play, easy to lose.This will become attractive to the player, so she/he will play it again and again.  
-  *Do you wanna play it?* <!-- .element: class="fragment" data-fragment-index="2"-->
-V:
-## Mini Games?:
-Yeap, we have made five of them, so you can play the one you consider more interesting. 
-<!-- .element: class="fragment" data-fragment-index="1"-->
+* Agentes basados en objetivos que deciden qué hacer para encontrar secuencias de acciones que conduzcan a estados deseables.
+* Usan la representación atómica: Estados del mundo son considerados como un todo.
 
-Just see the squares...  <!-- .element: class="fragment" data-fragment-index="2"-->
-
-**And make your choice!!!** <!-- .element: class="fragment" data-fragment-index="3"-->
 V:
-## Objectives
-* Short Term = Have a lot of video games. And try to join them as one big game that is design for include the mini games.
-* Long Term = Make a complete game plataform. For pc ( Windows, Unix systems, GNU ), mobile devices ( android ) and of course the Web. 
+### Formulación de objetivo:
+Agente se le atribuye un **objetivo** (conjunto de estados del mundo) 하는 목적  y trata de satisfacerlo.
+
+*Situación actual y Medida de Rendimieto*
+>Medida de rendimiento: Criterio de la conducta del agente para lograr éxito.
+
+¿Cómo debo actuar en el futuro?  <!-- .element: class="fragment" data-fragment-index="1"-->
+
+V:
+
+ ### Formulación del Problema
+
+Dado un objetivo:
+> es el proceso de decidir qué acciones y estados deben se considerados en la *búsqueda* de los estados deseables.
 
 H:
-# *The way we did it *:
-Each one of the games is a class, and Games, is the super class.  
-<img src="UML.png"> </img>
+### Ejemplo: Viaje en transmilenio:
 
+<!-- .slide: data-background="#FFFFFF" -->
+* En hora pico; actualmente en el Portal Sur. Clase de 7.
+* Objetivo: Llegar al campus de la UN a tiempo.
+
+<img src="map.jpg"> </img>
+
+V:
+##### Ejemplo: Viaje en transmilenio:
+* **Medida de rendimiento:** Menor cantidad de transbordos, llegar en el menor tiempo posible, ruta más vacia, etc.
+* Formulación de problema:
+	* Estados: Estaciones.
+	* Acciones: Tomar un bus de una estación a otra.
+
+> Suponer que el agente tiene un mapa de transmilenio y no existe una ruta directa. Ambiente es observable, discreto (finitas opciones), y determinístico (1 acción, 1 salida).
+
+V:
+### Un problema tiene:
+
+Estados, Estado inicial, función sucesor, Test objetivo, costo del camnino.
+
+**¿Cómo hacer?**
+> Sabemos que: El agente está en un estado inicial y sabemos donde va a ir tomada una acción.
+
+Búsqueda: Proceso de entonctrar uns secuencia de acciones que cumpla con el objetivo.
+
+
+V:
+<!-- .slide: data-background="#FFFFFF" -->
+
+### Busquedas de Soluciones:
+
+<!-- .slide: data-background="#7E2121" -->
+
+* Resolución de problemas se hace mediante búsqueda a través del espacio de estados.
+* Técnica básica: Árbol de búsqueda.  generado a partir del estado inicial y la función de transición. Nuevos Nodos.
+
+
+*Nodo:* Estado, Nodo Padre, Acción, Costo, Profundidad.
+
+
+<img src="tree.png"> </img>
 
 
 H:
-# *The Games*
+<!-- .slide: data-background="#FFFFFF" -->
 
-* Galaga
-
-* Clouds
-
-* Sticks
-
-* Colors
-
-* Bounce
+<img src="expa.png"> </img>
 
 V:
-### Galaga 
+### Galaga
 <!-- .slide: data-background="#7E2121"  -->
   >A version of the clasic game. Is an arcade video game developed by Tomohiro Nishikado and released in 1978 <!-- .element: class="fragment" data-fragment-index="1"-->
-  
+
 More information on [Wikipedia](https://en.wikipedia.org/wiki/Space_Invaders) <!-- .element: class="fragment" data-fragment-index="1"-->
 
 V:
 #### <font color="red">Galaga Running! </font>
 <!-- .slide: data-background="#000000"  -->
-<iframe src="sketches/Galaga.html" width="700" height="700" align="center"> 
+<iframe src="sketches/Galaga.html" width="700" height="700" align="center">
 
 
-V: 
+V:
 ### Clouds
   > How far can you go?? The sky is the limit. With this game you will jump the higher you can. Just move te bus with the mouse to go up.
 
 The inspiration for this game was the experience as a gamer. <!-- .element: class="fragment" data-fragment-index="1"-->
 
 V:
-#### Transmi-Cloud Running... 
-<iframe src="sketches/Clouds.html" width="700" height="700" align="center"> 
+#### Transmi-Cloud Running...
+<iframe src="sketches/Clouds.html" width="700" height="700" align="center">
 
 V:
-## Sticks 
+## Sticks
 > This game was based on the Towers of Hanoi. This Puzzle is a mathematical game invented in 1883 by the French mathematician Edouard Lucas.
 
 
-The more you play, the more difficult it will become. 
+The more you play, the more difficult it will become.
 
 For more information, on [Wikipedia]( https://es.wikipedia.org/wiki/Torres_de_Hanói)
 
 V:
-#### Sticks Running... 
-<iframe src="sketches/Stick.html" width="700" height="700" align="center"> 
+#### Sticks Running...
+<iframe src="sketches/Stick.html" width="700" height="700" align="center">
 
 V:
 ## Colors
 <!-- .slide: data-background="#7E2121"  -->
 > This game consist of let the drop fall in the correct color cube. The drop will follow the mouse position.If you lose, just ckick any part of the canvas, a the game will start again.  
 V:
-#### Colors Running... 
-<iframe src="sketches/Colors.html" width="700" height="700" align="center"> 
+#### Colors Running...
+<iframe src="sketches/Colors.html" width="700" height="700" align="center">
 
 V:
 
 ## Bounce
- >Version of the classic game of the red ball that have to pass thought different mazes to achive their goal. The ball obeys the up/down, right/left arrows of the keyboard. 
+ >Version of the classic game of the red ball that have to pass thought different mazes to achive their goal. The ball obeys the up/down, right/left arrows of the keyboard.
 
 V:
-#### Bounce Running... 
-<iframe src="sketches/Bounce.html" width="700" height="700" align="center"> 
+#### Bounce Running...
+<iframe src="sketches/Bounce.html" width="700" height="700" align="center">
 
 V:
-## Resume 
+## Resume
 | The games   | How to play them                 |
 | ------------|:--------------------------------:|
 | Galaga      | Up/down arrows and mouse press   |
 | Clouds      | With the position of the mouse   |  
-| Sticks      | Ckick the towers with the mouse  | 
+| Sticks      | Ckick the towers with the mouse  |
 | Colors      | Follow the mouse position        |
 |Bounce       | Use your keyboard arrows to play |
 
